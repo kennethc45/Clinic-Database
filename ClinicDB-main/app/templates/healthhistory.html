@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Health History</title>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</head>
+<body>
+    <h1>Health History</h1>
+    <form action="/healthhistory" method="GET">
+        <label for="patientIdGet">Patient ID:</label>
+        <input type="text" id="patientIdGet" name="patient_id" required><br>
+
+        <button type="submit">Get Health History</button>
+    </form>
+
+    <h1>Update Health History</h1>
+    <form id="updateForm" onsubmit="sendPutHealthRequest(event)">
+	<label for="patient_id_update">Patient ID to update:</label>
+	<input type="text" id="patient_id_update" name="patient_id" required><br>
+        <label for="new_received_medication">Received Medication:</label>
+        <input type="text" id="new_received_medications" name="new_received_medications"><br>
+        <label for="new_allergies">Allergies:</label>
+        <input type="text" id="new_allergies" name="new_allergies"><br>
+        <label for="new_diagnosis_conditions">Diagnosis and Conditions:</label>
+        <input type="text" id="new_diagnosis_conditions" name="new_diagnosis_conditions"><br>
+        <label for="new_family_history">Family History:</label>
+        <input type="text" id="new_family_history" name="new_family_history"><br>
+        <label for="new_health_history_id">Health History ID:</label>
+        <input type="text" id="new_health_history_id" name="new_health_history_id"><br>
+        <input type="submit" value="Update">
+    </form> 
+
+    <h1>Add Health History</h1>
+    <form id="addHealthHistoryForm" action="/healthhistory" method="POST">
+        <label for="patient_id">Patient ID:</label>
+        <input type="text" id="patient_id_add_health_history" name="patient_id" required><br>
+        <label for="add_received_medication">Received Medication:</label>
+        <input type="text" id="add_received_medication" name="add_received_medication"><br>
+        <label for="add_allergies">Allergies:</label>
+        <input type="text" id="add_allergies" name="add_allergies"><br>
+        <label for="add_diagnosis_and_conditions">Diagnosis and Conditions:</label>
+        <input type="text" id="add_diagnosis_and_conditions" name="add_diagnosis_and_conditions"><br>
+        <label for="add_family_history">Family History:</label>
+        <input type="text" id="add_family_history" name="add_family_history"><br>
+        <label for="add_health_history_id">Health History ID:</label>
+        <input type="text" id="add_health_history_id" name="add_health_history_id"><br>
+        <input type="submit" value="Add Health History">
+    </form>
+</body>

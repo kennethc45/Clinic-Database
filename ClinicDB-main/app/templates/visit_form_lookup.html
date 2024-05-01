@@ -1,0 +1,61 @@
+<!-- templates/visit_form_lookup.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visit Form Lookup</title>
+</head>
+<body>
+    <h1>Visit Form Lookup</h1>
+    <form action="/lookup" method="POST">
+        <label for="form_id">Enter Visit Form ID:</label>
+        <input type="text" id="form_id" name="form_id" required><br>
+        <input type="submit" value="Lookup">
+    </form>
+
+    <h2>Update Visit Form</h2>
+    <form action="/update-visit-form" method="POST" enctype="multipart/form-data">
+        <label for="record_id">Record ID:</label>
+        <input type="text" id="record_id" name="record_id" required><br>
+
+        <label for="patient_id">Patient ID:</label>
+        <input type="text" id="patient_id" name="patient_id"><br>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date"><br>
+
+        <label for="new_visit_form_image">New Visit Form Image:</label>
+        <input type="file" id="new_visit_form_image" name="new_visit_form_image" accept="image/*"><br>
+
+        <label for="new_mental_health_image">New Mental Health Image:</label>
+        <input type="file" id="new_mental_health_image" name="new_mental_health_image" accept="image/*"><br>
+
+        <label for="clinic_id">Clinic ID:</label>
+        <input type="text" id="clinic_id" name="clinic_id"><br>
+
+        <input type="submit" value="Update">
+    </form>
+
+    <h3>Add New Visit Form</h3>
+    <form action="/add-visit-form" method="POST" enctype="multipart/form-data">
+        <label for="record_id">Record ID:</label>
+        <input type="text" id="record_id" name="record_id" required><br>
+
+        <label for="patient_id">Patient ID:</label>
+        <input type="text" id="patient_id" name="patient_id" required><br>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required><br>
+
+        <label for="visit_form_image">Visit Form Image:</label>
+        <input type="file" id="visit_form_image" name="visit_form_image" accept="image/*"><br>
+
+        <label for="mental_health_image">Mental Health Image:</label>
+        <input type="file" id="mental_health_image" name="mental_health_image" accept="image/*"><br>
+
+        <label for="clinic_id">Clinic ID:</label>
+        <input type="text" id="clinic_id" name="clinic_id" required><br>
+
+        <input type="submit" value="Add Visit Form">
+    </form>
+</body>
+</html>

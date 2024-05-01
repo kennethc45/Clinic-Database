@@ -1,0 +1,16 @@
+<!-- templates/visit_form.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visit Form Details</title>
+</head>
+<body>
+    <h1>Visit Form Details</h1>
+    {% if visit_form %}
+        <img src="data:image/jpeg;base64,{{ visit_form['VisitFormImg'] }}" alt="Visit Form Image">
+        <!-- Here, you can add other details from visit_form to display -->
+    {% else %}
+        <p>No visit form found for the given ID.</p>
+    {% endif %}
+</body>
+</html>

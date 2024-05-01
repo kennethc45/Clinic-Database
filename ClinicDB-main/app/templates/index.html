@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Info</title>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</head>
+<body>
+    <h1>Patient Information Form</h1>
+    <form method="POST" action="/">
+        <input type="hidden" name="action" value="search_patient">
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name"><br>
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name"><br>
+        <input type="submit" value="Submit">
+    </form>    
+
+    <h2>Delete Patient Information</h2>
+    <form onsubmit="sendDeleteRequest(event)">
+        <label for="patient_id">Patient ID to delete:</label>
+        <input type="text" id="patient_id" name="patient_id" required><br>
+        <input type="submit" value="Delete">
+    </form>
+    
+    <h3>Update Patient Information</h3>
+    <form id="updateForm" onsubmit="sendPutRequest(event)">
+        <label for="patient_id_update">Patient ID to update:</label>
+        <input type="text" id="patient_id_update" name="patient_id" required><br>
+        <label for="new_first_name">New First Name:</label>
+        <input type="text" id="new_first_name" name="new_first_name"><br>
+        <label for="new_last_name">New Last Name:</label>
+        <input type="text" id="new_last_name" name="new_last_name"><br>
+        <label for="new_sex">New Sex/Gender:</label>
+        <input type="text" id="new_sex" name="new_sex"><br>
+        <label for="new_date_of_birth">New Date of Birth:</label>
+        <input type="date" id="new_date_of_birth" name="new_date_of_birth"><br>
+        <label for="new_veteran_flag">New Veteran Flag (true/false):</label>
+        <input type="text" id="new_veteran_flag" name="new_veteran_flag"><br>
+        <label for="new_alias">New Alias:</label>
+        <input type="text" id="new_alias" name="new_alias"><br>
+        <label for="new_ethnicity">New Ethnicity:</label>
+        <input type="text" id="new_ethnicity" name="new_ethnicity"><br>
+        <label for="new_phone_number">New Phone Number:</label>
+        <input type="text" id="new_phone_number" name="new_phone_number"><br>
+        <label for="new_address">New Address:</label>
+        <input type="text" id="new_address" name="new_address"><br>
+        <label for="new_PCP_ID">New Primary Care Physician ID:</label>
+        <input type="text" id="new_PCP_ID" name="new_PCP_ID"><br>
+        <label for="new_insurance">New Insurance:</label>
+        <input type="text" id="new_insurance" name="new_insurance"><br>
+        <label for="new_waiver_form">New Waiver Form URL:</label>
+        <input type="text" id="new_waiver_form" name="new_waiver_form"><br>
+        <input type="submit" value="Update">
+    </form>
+
+    <!-- Add this section in your visit_form_lookup.html -->
+
+    <h4>Add New Patient</h4>
+    <form action="/" method="POST">
+        <input type="hidden" name="action" value="add_patient">
+        <label for="patient_id">Patient ID:</label>
+        <input type="text" id="patient_id" name="patient_id" required><br>
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" required><br>
+
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" required><br>
+
+        <label for="sex">Sex:</label>
+        <input type="text" id="sex" name="sex" required><br>
+
+        <label for="date_of_birth">Date of Birth:</label>
+        <input type="date" id="date_of_birth" name="date_of_birth" required><br>
+
+        <label for="veteran_flag">Veteran Flag:</label>
+        <input type="checkbox" id="veteran_flag" name="veteran_flag"><br>
+
+        <label for="alias">Alias:</label>
+        <input type="text" id="alias" name="alias"><br>
+
+        <label for="ethnicity">Ethnicity:</label>
+        <input type="text" id="ethnicity" name="ethnicity"><br>
+
+        <label for="phone_number">Phone Number:</label>
+        <input type="text" id="phone_number" name="phone_number"><br>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required><br>
+
+        <label for="pcp_id">Primary Care Physician ID:</label>
+        <input type="text" id="pcp_id" name="pcp_id"><br>
+
+        <label for="insurance">Insurance:</label>
+        <input type="text" id="insurance" name="insurance"><br>
+
+        <label for="waiver_form">Waiver Form URL:</label>
+        <input type="text" id="waiver_form" name="waiver_form"><br>
+
+        <input type="submit" value="Add Patient">
+    </form>
+
+
+    
+
+</body>
+</html>

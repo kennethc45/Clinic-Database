@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drug History Info</title>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</head>
+<body>
+    <h1>Drug History Information Form</h1>
+    <form action="/drughistory" method="GET">
+        <label for="first_name">Patient First Name:</label>
+        <input type="text" id="first_name" name="first_name"><br>
+        <label for="last_name">Patient Last Name:</label>
+        <input type="text" id="last_name" name="last_name"><br>
+        <input type="submit" value="Submit">
+    </form>  
+
+    <h1>Upload New Drug History Information</h1>
+    <form action="/drughistory" method="POST">
+        <label for="Problem">Problem:</label>
+        <input type="text" id="Problem" name="Problem"><br>
+        <label for="Medication">Medication:</label>
+        <input type="text" id="Medication" name="Medication"><br>
+        <label for="Dosage">Dosage:</label>
+        <input type="text" id="Dosage" name="Dosage"><br>
+        <label for="Date_reviewed">Date Reviewed:</label>
+        <input type="date" id="Date_reviewed" name="Date_reviewed"><br>
+        <label for="Patient_id_upload">Patient ID:</label>
+        <input type="text" id="Patient_id_upload" name="Patient_id_upload" required><br>
+        <label for="Drughistory_id_upload">Drug History ID:</label>
+        <input type="text" id="Drughistory_id_upload" name="Drughistory_id_upload" required><br>
+        <input type="submit" value="Submit">
+    </form> 
+
+    <h1>Update Drug History Information</h1>
+    <form id="updateForm" onsubmit="sendPutRequestDrugHistory(event)">
+        <label for="patient_id_update">Patient ID to update:</label>
+        <input type="text" id="patient_id_update" name="patient_id_update" required><br>
+        <label for="drughistory_id_update">Drug History ID to update:</label>
+        <input type="text" id="drughistory_id_update" name="drughistory_id_update" required><br>
+        <label for="new_problem">New Problem:</label>
+        <input type="text" id="new_problem" name="new_problem"><br>
+        <label for="new_medication">New Medication:</label>
+        <input type="text" id="new_medication" name="new_medication"><br>
+        <label for="new_dosage">New Dosage:</label>
+        <input type="text" id="new_dosage" name="new_dosage"><br>
+        <label for="new_date_reviewed">New Date Reviewed:</label>
+        <input type="date" id="new_date_reviewed" name="new_date_reviewed"><br>
+        <input type="submit" value="Update">
+    </form>
+</body>
+</html>

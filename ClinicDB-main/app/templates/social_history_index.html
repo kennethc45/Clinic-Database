@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Social History Info</title>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</head>
+<body>   
+
+    <h1>Retrieve Patient's Social History</h1>
+    <form method="GET" action="/socialhistory">
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name"><br>
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name"><br>
+        <input type="submit" value="Submit">
+    </form> 
+    <h1>Upload New Patient's Social History</h1>
+    <form method="POST" action="/socialhistory">
+        <label for="Alcohol">Alochol:</label>
+        <input type="text" id="Alcohol" name="Alcohol"><br>
+        <label for="Tobacco">Tobacco:</label>
+        <input type="text" id="Tobacco" name="Tobacco"><br>
+        <label for="Drugs">Drugs:</label>
+        <input type="text" id="Drugs" name="Drugs"><br>
+        <label for="LivingArrangements">Living Arrangements</label>
+        <input type="text" id="LivingArrangements" name="LivingArrangements"><br>
+        <label for="Immunization">Immunization:</label>
+        <input type="text" id="Immunization" name="Immunization"><br>
+        <label for="PatientID">PatientID:</label>
+        <input type="text" id="PatientID" name="PatientID"><br>
+        <label for="SocialHistoryID">SocialHistoryID:</label>
+        <input type="text" id="SocialHistoryID" name="SocialHistoryID"><br>
+        <input type="submit" value="Submit">
+    </form> 
+    <h1>Update Patient's Social History</h1>
+    <form id="updateForm" onsubmit="sendPutSocialHistoryRequest(event)">
+        <label for="patient_id_update">Patient ID to update:</label>
+        <input type="text" id="patient_id_update" name="patient_id" required><br>
+        <label for="new_alcohol">New Alcohol:</label>
+        <input type="text" id="new_alcohol" name="new_alcohol"><br>
+        <label for="new_tobacco">New Tobacco:</label>
+        <input type="text" id="new_tobacco" name="new_tobacco"><br>
+        <label for="new_drugs">New Drugs:</label>
+        <input type="text" id="new_drugs" name="new_drugs"><br>
+        <label for="new_living_arrangements">New Living Arrangements:</label>
+        <input type="text" id="new_living_arrangements" name="new_living_arrangements"><br>
+        <label for="new_immunization">New Immunization:</label>
+        <input type="text" id="new_immunization" name="new_immunization"><br>
+        <label for="new_social_history_id">New Social History ID:</label>
+        <input type="text" id="new_social_history_id" name="new_social_history_id"><br>
+        <input type="submit" value="Update">
+    </form> 
+
+</body>
+</html>
